@@ -19,7 +19,7 @@ def test_static_privacy_and_accessibility_contract():
     assert "connect-src 'none'" in policy and "frame-ancestors 'none'" in policy
     assert "prefers-reduced-motion" in css and "@media print" in css
     assert not re.search(r"<(?:script|link)[^>]+(?:https?:)?//", html, re.I)
-    for name in ["index.html", "app.js", "styles.css", ".htaccess", "README.md", "LICENSE", "SECURITY.md", "preview.svg", "tests/test_runtime.js"]:
+    for name in ["index.html", "app.js", "styles.css", ".htaccess", "README.md", "LICENSE", "SECURITY.md", "preview.svg", "favicon.svg", "tests/test_runtime.js"]:
         assert (ROOT / name).is_file(), name
     assert not (ROOT / "cookie-banner.js").exists()
     assert not (ROOT / "cookie-banner.css").exists()
